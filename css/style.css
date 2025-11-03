@@ -1,0 +1,72 @@
+/* === 🔹 Загальні стилі === */
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f4f4f4;
+  color: #151413;
+}
+
+/* === 🔹 Header === */
+header {
+  background-color: #151413;
+  padding: 1rem 0;
+}
+
+/* === 🔹 Контейнер меню === */
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* === 🔹 Меню === */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.menu li a:hover {
+  color: #ffcc33;
+  transform: translateY(-2px);
+}
+
+/* === 🔹 Адаптивність === */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* === 🔹 Темна тема (опційно) === */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0f0f0f;
+    color: #f4f4f4;
+  }
+
+  header {
+    background-color: #0c0c0c;
+  }
+
+  .menu li a {
+    color: #eaeaea;
+  }
+
+  .menu li a:hover {
+    color: #ffcc33;
+  }
+}
