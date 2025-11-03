@@ -12,7 +12,6 @@ header {
   padding: 1rem 0;
 }
 
-/* === 🔹 Контейнер меню === */
 .menu-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -21,7 +20,6 @@ header {
   justify-content: center;
 }
 
-/* === 🔹 Меню === */
 .menu {
   list-style: none;
   display: flex;
@@ -42,31 +40,86 @@ header {
   transform: translateY(-2px);
 }
 
+/* === 🔹 Main Section === */
+.products-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.products-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #151413;
+}
+
+/* === 🔹 Сітка товарів === */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* === 🔹 Картка товару === */
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.product-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #151413;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* === 🔹 Кнопка === */
+.product-card button {
+  background: #151413;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.product-card button:hover {
+  background: #ffcc33;
+  color: #151413;
+}
+
 /* === 🔹 Адаптивність === */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+@media (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* === 🔹 Темна тема (опційно) === */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #0f0f0f;
-    color: #f4f4f4;
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
   }
-
-  header {
-    background-color: #0c0c0c;
-  }
-
-  .menu li a {
-    color: #eaeaea;
-  }
-
-  .menu li a:hover {
-    color: #ffcc33;
+  .products-section {
+    padding: 0 1rem;
   }
 }
